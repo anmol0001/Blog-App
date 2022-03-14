@@ -1,0 +1,10 @@
+<%- include("./partials/header")   %>
+
+  <div class="container">
+    <h1 class="mb-4">Edit Blog</h1>
+
+    <form action="/edit/<%= blog._id %>?_method=PATCH" method="POST">
+      <%- include('forms') %>
+    </form>
+  </div>
+  <%- include("./partials/footer")  %>

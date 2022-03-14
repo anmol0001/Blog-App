@@ -1,0 +1,27 @@
+<%- include("./partials/header")   %>
+
+  <div class="container">
+    <h1 class="m-4 col-12 p-3 border bg-light" style="text-align: center;">Blog App</h1>
+    <a href="/new" class="btn btn-success">New Blog</a>
+
+    <% blogs.map((blog) => { %>
+      <div class="card mt-4">
+        <div class="card-body">
+          <h3 class="card-title"><%= blog.title %> says</h3>
+          <div class="card-subtitle text-muted mb-2">
+            <%= blog.createdAt.toLocaleDateString() %>
+          </div>
+          <h5 class="card-text mb-2"><%= blog.author %></h5>
+          <div class="card-text mb-2"><%= blog.description %></div>
+          <a href="/<%= blog._id %>" class="btn btn-primary">Show Blog</a>
+          <a href="/edit/<%= blog._id %>" class="btn btn-info">Edit</a>
+
+          
+          <form action="/delete/<%= blog._id %>?_method=DELETE" method="POST" class="d-inline">
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+<%- include("./partials/footer")  %>

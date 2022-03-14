@@ -1,0 +1,19 @@
+<%- include("./partials/header")   %>
+
+  <div class="container">
+    <h1 class="mb-1"><%- blog.author%> says</h1>
+    <div class="text-muted mb-2">
+      <%= blog.createdAt.toLocaleDateString() %>
+    </div>
+   
+    <div>
+      <h3 class="mt-2 mb-2"><%= blog.title %></h3>
+       <h5><%- blog.description %></h5>
+    </div>
+  
+    <div>
+    <a href="/" class="btn btn-secondary">All Blogs</a>
+    <a href="/edit/<%= blog._id %>" class="btn btn-info">Edit</a>
+  </div>
+  </div>
+  <%- include("./partials/footer")  %>

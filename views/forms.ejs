@@ -1,0 +1,15 @@
+<div class="form-group mb-2">
+    <label for="title" class="mb-2">Title</label>
+    <input required value="<%= blog.title %>" type="text" name="title" id="title" class="form-control">
+  </div>
+  <div class="form-group mb-2">
+    <label for="description" class="mb-2">Description</label><br>
+    <textarea name="description" id="description" class="form-control"><%= blog.description %></textarea>
+  </div>
+  <div class="form-group mb-4">
+    <label for="author" class="mb-2">Author</label><br>
+    <input required value="<%= blog.author %>" type="text" name="author" id="author" class="form-control">
+   </div>
+  
+  <a href="/" class="btn btn-secondary">Cancel</a>
+  <button type="submit" class="btn btn-primary">Save</button>
